@@ -1,28 +1,57 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+// Context
+import AppContext from "./_context/AppContext";
+import PlayerContainerContext from "./player/context/PlayerContainer";
+import NameContainerContext from "./player/context/NameContainer";
+import SurnameContainerContext from "./player/context/SurnameContainer";
+// Redux
+import AppRedux from "./_redux/AppRedux";
+import PlayerContainerRedux from "./player/redux/PlayerContainer";
+import NameContainerRedux from "./player/redux/NameContainer";
+import SurnameContainerRedux from "./player/redux/SurnameContainer";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
-}
+const App = ({ className }) => (
+    <div className={className}>
+        <div className="AppContext">
+            <h1 className="header">CONTEXT</h1>
+            <AppContext>
+                <PlayerContainerContext />
+                <NameContainerContext />
+                <SurnameContainerContext />
+            </AppContext>
+        </div>
+        <div className="AppRedux">
+            <h1 className="header">REDUX</h1>
+            <AppRedux>
+                <PlayerContainerRedux />
+                <NameContainerRedux />
+                <SurnameContainerRedux />
+            </AppRedux>
+        </div>
+    </div>
+);
 
-export default App;
+const AppStyled = styled(App)`
+    display: flex;
+    .header {
+        text-align: center;
+        color: #AFA;
+    }    
+    .AppContext {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background-color: cadetblue;
+    }
+    .AppRedux {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        background-color: darkcyan;
+    }
+`;
+
+export default AppStyled;
