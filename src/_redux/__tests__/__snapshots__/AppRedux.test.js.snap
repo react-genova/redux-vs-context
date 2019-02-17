@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux AppRedux renders without crashing with children 1`] = `<div />`;
+
+exports[`redux AppRedux renders without crashing with no children 1`] = `null`;

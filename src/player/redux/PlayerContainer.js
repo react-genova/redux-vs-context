@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 import PlayerEdit from '../components/PlayerEdit';
 import { getPlayerName, getPlayerSurname, editPlayerName, editPlayerSurname } from './player';
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
     name: getPlayerName(state),
     surname: getPlayerSurname(state),
 });
 
-const mapDispatchToProps = {
+export const mapDispatchToProps = {
     onNameChanged: editPlayerName,
     onSurnameChanged: editPlayerSurname,
 };
