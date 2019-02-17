@@ -11,10 +11,14 @@
     "reselect": "^4.0.0",
     "styled-components": "^4.1.3"
   },
+  "devDependencies": {
+    "react-testing-library": "^5.8.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

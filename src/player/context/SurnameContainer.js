@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
 import FieldShow from '../components/FieldShow';
-import Context from './Context';
+import Context, { getPlayerSurname } from './Context';
 
 const PureFieldShow = memo(FieldShow);
 
 const SurnameContainer = () => (
     <Context.Consumer>
-    {({ surname }) => <PureFieldShow value={surname} label="Surname" />}
+    {player => <PureFieldShow value={getPlayerSurname(player)} label="Surname" />}
     </Context.Consumer>
 );
 

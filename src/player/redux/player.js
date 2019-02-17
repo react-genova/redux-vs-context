@@ -1,7 +1,8 @@
 import { createSelector } from 'reselect';
 
-const EDIT_PLAYER_NAME = 'rvc/EDIT_PLAYER_NAME@player';
-const EDIT_PLAYER_SURNAME = 'rvc/EDIT_PLAYER_SURNAME@player';
+// action types
+export const EDIT_PLAYER_NAME = 'rvc/EDIT_PLAYER_NAME@player';
+export const EDIT_PLAYER_SURNAME = 'rvc/EDIT_PLAYER_SURNAME@player';
 
 // action creators
 export const editPlayerName = name => ({ type: EDIT_PLAYER_NAME, payload: { name }});
