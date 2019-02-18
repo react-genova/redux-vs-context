@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+// Common
+import Title from "./components/Title";
+import Subtitle from "./components/Subtitle";
 // Context
 import AppContext from "./_context/AppContext";
 import PlayerContainerContext from "./player/context/PlayerContainer";
@@ -14,16 +17,18 @@ import SurnameContainerRedux from "./player/redux/SurnameContainer";
 const App = ({ className }) => (
     <div className={className}>
         <div className="AppContext">
-            <h1 className="header">CONTEXT</h1>
+            <Title title="Context" />
             <AppContext>
+                <Subtitle subtitle="Player" />
                 <PlayerContainerContext />
                 <NameContainerContext />
                 <SurnameContainerContext />
             </AppContext>
         </div>
         <div className="AppRedux">
-            <h1 className="header">REDUX</h1>
+            <Title title="Redux" />
             <AppRedux>
+                <Subtitle subtitle="Player" />
                 <PlayerContainerRedux />
                 <NameContainerRedux />
                 <SurnameContainerRedux />
@@ -34,19 +39,15 @@ const App = ({ className }) => (
 
 const AppStyled = styled(App)`
     display: flex;
-    .header {
-        text-align: center;
-        color: #AFA;
-    }    
     .AppContext {
-        padding: 10px;
+        padding: 0 10px;
         display: flex;
         flex-direction: column;
         flex: 1;
         background-color: cadetblue;
     }
     .AppRedux {
-        padding: 10px;
+        padding: 0 10px;
         display: flex;
         flex-direction: column;
         flex: 1;
