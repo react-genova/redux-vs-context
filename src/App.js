@@ -1,18 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 // Common
-import Title from "./components/Title";
-import Subtitle from "./components/Subtitle";
+import Title from './components/Title';
+import Subtitle from './components/Subtitle';
 // Context
-import AppContext from "./_context/AppContext";
-import PlayerContainerContext from "./player/context/PlayerContainer";
-import NameContainerContext from "./player/context/NameContainer";
-import SurnameContainerContext from "./player/context/SurnameContainer";
+import AppContext from './_context/AppContext';
+import PlayerContainerContext from './player/context/PlayerContainer';
+import NameContainerContext from './player/context/NameContainer';
+import SurnameContainerContext from './player/context/SurnameContainer';
 // Redux
-import AppRedux from "./_redux/AppRedux";
-import PlayerContainerRedux from "./player/redux/PlayerContainer";
-import NameContainerRedux from "./player/redux/NameContainer";
-import SurnameContainerRedux from "./player/redux/SurnameContainer";
+import AppRedux from './_redux/AppRedux';
+import PlayerContainerRedux from './player/redux/PlayerContainer';
+import NameContainerRedux from './player/redux/NameContainer';
+import SurnameContainerRedux from './player/redux/SurnameContainer';
 
 const App = ({ className }) => (
     <div className={className}>

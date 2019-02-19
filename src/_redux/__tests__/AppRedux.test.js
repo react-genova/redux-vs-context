@@ -1,6 +1,7 @@
 import React from 'react';
 import AppRedux from '../AppRedux';
 import { render } from 'react-testing-library';
+jest.mock('react-redux');
 
 describe('redux AppRedux', () => {
     it('renders without crashing with no children', () => {
@@ -9,7 +10,11 @@ describe('redux AppRedux', () => {
     });
 
     it('renders without crashing with children', () => {
-        const { container } = render(<AppRedux><div /></AppRedux>);
+        const { container } = render(
+            <AppRedux>
+                <div />
+            </AppRedux>
+        );
         expect(container.firstChild).toMatchSnapshot();
     });
 });

@@ -10,13 +10,13 @@ const FieldShow = ({ label, value, className }) => {
 FieldShow.propTypes = {
     className: PropTypes.string,
     value: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired
 };
 
 const FieldShowStyled = styled(FieldShow)`
     margin: 5px;
     border: 1px solid green;
-    background-color: #AFA;
+    background-color: #afa;
     padding: 10px;
 `;
 

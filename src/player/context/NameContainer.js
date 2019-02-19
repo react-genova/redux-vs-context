@@ -6,7 +6,7 @@ const PureFieldShow = memo(FieldShow);
 
 const NameContainer = () => (
     <Context.Consumer>
-    {player => <PureFieldShow value={getPlayerName(player)} label="Name" />}
+        {player => <PureFieldShow value={getPlayerName(player)} label="Name" />}
     </Context.Consumer>
 );
 

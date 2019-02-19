@@ -3,9 +3,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 const AppRedux = ({ children }) => (
-    <Provider store={store}>
-    { children }
-    </Provider>
+    <Provider store={store}>{children}</Provider>
 );
 
 export default AppRedux;

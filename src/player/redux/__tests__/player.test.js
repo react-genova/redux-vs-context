@@ -1,4 +1,11 @@
-import reducer, { EDIT_PLAYER_NAME, EDIT_PLAYER_SURNAME, editPlayerName, editPlayerSurname, getPlayerName, getPlayerSurname } from '../player';
+import reducer, {
+    EDIT_PLAYER_NAME,
+    EDIT_PLAYER_SURNAME,
+    editPlayerName,
+    editPlayerSurname,
+    getPlayerName,
+    getPlayerSurname
+} from '../player';
 
 describe('redux player reducer', () => {
     const PLAYER_STATE = { name: 'Franco', surname: 'Puppo' };
@@ -14,8 +21,8 @@ describe('redux player reducer', () => {
         expect(editPlayerName('Franco')).toEqual({
             type: EDIT_PLAYER_NAME,
             payload: {
-                name: 'Franco',
-            },
+                name: 'Franco'
+            }
         });
     });
 
@@ -23,8 +30,8 @@ describe('redux player reducer', () => {
         expect(editPlayerSurname('Puppo')).toEqual({
             type: EDIT_PLAYER_SURNAME,
             payload: {
-                surname: 'Puppo',
-            },
+                surname: 'Puppo'
+            }
         });
     });
 
@@ -34,7 +41,7 @@ describe('redux player reducer', () => {
     });
 
     it('creates a valid initial empty state', () => {
-        expect(reducer()).toEqual({ name: '', surname: ''});
+        expect(reducer()).toEqual({ name: '', surname: '' });
     });
 
     it('does not mutate before state during reduction', () => {
@@ -48,10 +55,16 @@ describe('redux player reducer', () => {
     });
 
     it('reduces an EDIT_PLAYER_NAME action', () => {
-        expect(reducer(PLAYER_STATE, editPlayerName('Diego'))).toEqual({ name: 'Diego', surname: 'Puppo'});
+        expect(reducer(PLAYER_STATE, editPlayerName('Diego'))).toEqual({
+            name: 'Diego',
+            surname: 'Puppo'
+        });
     });
 
     it('reduces an EDIT_PLAYER_SURNAME action', () => {
-        expect(reducer(PLAYER_STATE, editPlayerSurname('Venusiello'))).toEqual({ name: 'Franco', surname: 'Venusiello'});
+        expect(reducer(PLAYER_STATE, editPlayerSurname('Venusiello'))).toEqual({
+            name: 'Franco',
+            surname: 'Venusiello'
+        });
     });
 });

@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Subtitle = ({ subtitle, className }) => {
-    console.log("render Subtitle");
+    console.log('render Subtitle');
     return <h2 className={className}>{subtitle}</h2>;
 };
 

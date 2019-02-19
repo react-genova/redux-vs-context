@@ -1,9 +1,8 @@
-jest.mock('../player.js');
-jest.mock('react-redux', () => ({ connect: mapper => component => ({ mapper, component })}));
 import SurnameContainer, { mapStateToProps } from '../SurnameContainer';
 import { getPlayerSurname } from '../player';
-import { connect } from 'react-redux';
 import FieldShow from '../../components/FieldShow';
+jest.mock('../player.js');
+jest.mock('react-redux');
 
 describe('redux SurnameContainer', () => {
     it('selects right props from full state', () => {
@@ -17,8 +16,9 @@ describe('redux SurnameContainer', () => {
 
     it('connects to redux properly', () => {
         expect(SurnameContainer).toEqual({
-            mapper: mapStateToProps,
-            component: FieldShow,
+            mapStateToProps: mapStateToProps,
+            mapDispatchToProps: undefined,
+            component: FieldShow
         });
     });
 });

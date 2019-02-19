@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Title = ({ title, className }) => {
-    console.log("render Title");
+    console.log('render Title');
     return <h1 className={className}>{title}</h1>;
 };
 

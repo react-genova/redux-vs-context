@@ -1,9 +1,16 @@
-jest.mock('../player.js');
-jest.mock('react-redux', () => ({ connect: (mapper, dispatcher) => component => ({ dispatcher, mapper, component })}));
-import PlayerContainer, { mapStateToProps, mapDispatchToProps } from '../PlayerContainer';
-import { getPlayerSurname, getPlayerName, editPlayerName, editPlayerSurname } from '../player';
-import { connect } from 'react-redux';
+import PlayerContainer, {
+    mapStateToProps,
+    mapDispatchToProps
+} from '../PlayerContainer';
+import {
+    getPlayerSurname,
+    getPlayerName,
+    editPlayerName,
+    editPlayerSurname
+} from '../player';
 import PlayerEdit from '../../components/PlayerEdit';
+jest.mock('../player.js');
+jest.mock('react-redux');
 
 describe('redux PlayerContainer', () => {
     it('selects right props from full state', () => {
@@ -17,22 +24,22 @@ describe('redux PlayerContainer', () => {
         expect(getPlayerName).toHaveBeenCalledWith(STATE);
         expect(props).toEqual({
             surname: 'Campodonico',
-            name: 'Matteo',
+            name: 'Matteo'
         });
     });
 
     it('maps right actions to dispatch', () => {
         expect(mapDispatchToProps).toEqual({
             onNameChanged: editPlayerName,
-            onSurnameChanged: editPlayerSurname,
+            onSurnameChanged: editPlayerSurname
         });
-    })
+    });
 
     it('connects to redux properly', () => {
         expect(PlayerContainer).toEqual({
-            dispatcher: mapDispatchToProps,
-            mapper: mapStateToProps,
-            component: PlayerEdit,
+            mapStateToProps: mapStateToProps,
+            mapDispatchToProps: mapDispatchToProps,
+            component: PlayerEdit
         });
     });
 });
