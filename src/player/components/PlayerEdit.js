@@ -22,13 +22,13 @@ const PlayerEdit = ({
         <div className={className}>
             <span className="player-label">{'Name'}</span>
             <input
-                className="player-value"
+                className="player-value player-name"
                 onChange={onNameChangedCallback}
                 value={name}
             />
             <span className="player-label">{'Surname'}</span>
             <input
-                className="player-value"
+                className="player-value player-surname"
                 onChange={onSurnameChangedCallback}
                 value={surname}
             />

@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerEdit component renders without crashing 1`] = `
+.c0 {
+  margin: 5px;
+  border: 1px solid #fff;
+  background-color: #eee;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0 .player-label {
+  padding: 20px;
+}
+
+.c0 .player-value {
+  padding: 5px;
+  width: 100px;
+}
+
+<div
+  class="c0"
+>
+  <span
+    class="player-label"
+  >
+    Name
+  </span>
+  <input
+    class="player-value player-name"
+    value="Paolino"
+  />
+  <span
+    class="player-label"
+  >
+    Surname
+  </span>
+  <input
+    class="player-value player-surname"
+    value="Paperino"
+  />
+</div>
+`;

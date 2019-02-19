@@ -7,11 +7,11 @@ jest.mock('react-redux');
 describe('redux NameContainer', () => {
     it('selects right props from full state', () => {
         const STATE = {};
-        getPlayerName.mockImplementation(() => 'Matteo');
+        getPlayerName.mockImplementation(() => 'Paolino');
         const props = mapStateToProps(STATE);
         expect(getPlayerName).toHaveBeenCalledTimes(1);
         expect(getPlayerName).toHaveBeenCalledWith(STATE);
-        expect(props).toEqual({ value: 'Matteo', label: 'Name' });
+        expect(props).toEqual({ value: 'Paolino', label: 'Name' });
     });
 
     it('connects to redux properly', () => {

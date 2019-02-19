@@ -15,16 +15,16 @@ jest.mock('react-redux');
 describe('redux PlayerContainer', () => {
     it('selects right props from full state', () => {
         const STATE = {};
-        getPlayerName.mockImplementation(() => 'Matteo');
-        getPlayerSurname.mockImplementation(() => 'Campodonico');
+        getPlayerName.mockImplementation(() => 'Paolino');
+        getPlayerSurname.mockImplementation(() => 'Paperino');
         const props = mapStateToProps(STATE);
         expect(getPlayerSurname).toHaveBeenCalledTimes(1);
         expect(getPlayerSurname).toHaveBeenCalledWith(STATE);
         expect(getPlayerName).toHaveBeenCalledTimes(1);
         expect(getPlayerName).toHaveBeenCalledWith(STATE);
         expect(props).toEqual({
-            surname: 'Campodonico',
-            name: 'Matteo'
+            surname: 'Paperino',
+            name: 'Paolino'
         });
     });
 
