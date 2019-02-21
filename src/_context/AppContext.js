@@ -9,7 +9,12 @@ const AppContext = ({ children }) => {
     const onSurnameChanged = useCallback(surname => setSurname(surname));
     return (
         <Context.Provider
-            value={{ name, surname, onNameChanged, onSurnameChanged }}
+            value={{
+                name,
+                surname,
+                onNameChanged,
+                onSurnameChanged
+            }}
         >
             {children}
         </Context.Provider>

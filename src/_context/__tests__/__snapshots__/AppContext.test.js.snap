@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppContext provider component provides an empty value at startup and reacts to changes 1`] = `
+<div>
+  <input
+    data-testid="name"
+    value=""
+  />
+  <input
+    data-testid="surname"
+    value=""
+  />
+</div>
+`;

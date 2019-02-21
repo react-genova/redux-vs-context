@@ -8,7 +8,7 @@ import reducer, {
 } from '../player';
 
 describe('redux player reducer', () => {
-    const PLAYER_STATE = { name: 'Franco', surname: 'Puppo' };
+    const PLAYER_STATE = { name: 'Paolo', surname: 'Rossi' };
     const STATE = { player: PLAYER_STATE };
 
     it('has unique and not empty action constants', () => {
@@ -18,26 +18,26 @@ describe('redux player reducer', () => {
     });
 
     it('exports a valid editPlayerName action creator', () => {
-        expect(editPlayerName('Franco')).toEqual({
+        expect(editPlayerName('Paolo')).toEqual({
             type: EDIT_PLAYER_NAME,
             payload: {
-                name: 'Franco'
+                name: 'Paolo'
             }
         });
     });
 
     it('exports a valid editPlayerSurname action creator', () => {
-        expect(editPlayerSurname('Puppo')).toEqual({
+        expect(editPlayerSurname('Rossi')).toEqual({
             type: EDIT_PLAYER_SURNAME,
             payload: {
-                surname: 'Puppo'
+                surname: 'Rossi'
             }
         });
     });
 
     it('selects all its fields using selectors', () => {
-        expect(getPlayerName(STATE)).toBe('Franco');
-        expect(getPlayerSurname(STATE)).toBe('Puppo');
+        expect(getPlayerName(STATE)).toBe('Paolo');
+        expect(getPlayerSurname(STATE)).toBe('Rossi');
     });
 
     it('creates a valid initial empty state', () => {
@@ -46,8 +46,8 @@ describe('redux player reducer', () => {
 
     it('does not mutate before state during reduction', () => {
         Object.freeze(PLAYER_STATE);
-        reducer(PLAYER_STATE, editPlayerName('Diego'));
-        reducer(PLAYER_STATE, editPlayerSurname('Venusiello'));
+        reducer(PLAYER_STATE, editPlayerName('Freddie'));
+        reducer(PLAYER_STATE, editPlayerSurname('Mercury'));
     });
 
     it('reduces an unknown action', () => {
@@ -55,16 +55,16 @@ describe('redux player reducer', () => {
     });
 
     it('reduces an EDIT_PLAYER_NAME action', () => {
-        expect(reducer(PLAYER_STATE, editPlayerName('Diego'))).toEqual({
-            name: 'Diego',
-            surname: 'Puppo'
+        expect(reducer(PLAYER_STATE, editPlayerName('Freddie'))).toEqual({
+            name: 'Freddie',
+            surname: 'Rossi'
         });
     });
 
     it('reduces an EDIT_PLAYER_SURNAME action', () => {
-        expect(reducer(PLAYER_STATE, editPlayerSurname('Venusiello'))).toEqual({
-            name: 'Franco',
-            surname: 'Venusiello'
+        expect(reducer(PLAYER_STATE, editPlayerSurname('Mercury'))).toEqual({
+            name: 'Paolo',
+            surname: 'Mercury'
         });
     });
 });
