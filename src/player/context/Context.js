@@ -1,11 +1,13 @@
 import { createContext } from 'react';
 import { createSelector } from 'reselect';
 
+export const noop = () => null;
+
 const PlayerContext = createContext({
     name: '',
     surname: '',
-    onNameChanged: () => null,
-    onSurnameChanged: () => null
+    onNameChanged: noop,
+    onSurnameChanged: noop
 });
 
 const getPlayer = value => value;
