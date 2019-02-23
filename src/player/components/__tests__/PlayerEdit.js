@@ -4,6 +4,8 @@ import { fireEvent, render } from 'react-testing-library';
 import 'jest-styled-components';
 
 describe('PlayerEdit component', () => {
+    global.console = { log: () => null };
+
     it('renders without crashing', () => {
         const onNameChanged = jest.fn();
         const onSurnnameChanged = jest.fn();

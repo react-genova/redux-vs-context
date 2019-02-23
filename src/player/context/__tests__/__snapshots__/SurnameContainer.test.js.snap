@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SurnameContainer consumer container renders without crashing and passes values down to its child 1`] = `
+<div>
+  <div
+    data-testid="surname"
+  >
+    Rossi
+  </div>
+  <div
+    data-testid="label"
+  >
+    Surname
+  </div>
+</div>
+`;

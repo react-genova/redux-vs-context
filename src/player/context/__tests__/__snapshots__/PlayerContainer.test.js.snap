@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayerContainer consumer container renders without crashing and passes values down to its child 1`] = `
+<div>
+  <div
+    data-testid="name"
+  >
+    Dino
+  </div>
+  <div
+    data-testid="surname"
+  >
+    Zoff
+  </div>
+</div>
+`;

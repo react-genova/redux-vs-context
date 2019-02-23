@@ -4,6 +4,8 @@ import { render } from 'react-testing-library';
 import 'jest-styled-components';
 
 describe('Subtitle component', () => {
+    global.console = { log: () => null };
+
     it('renders without crashing', () => {
         const { container } = render(
             <Subtitle subtitle="the subtitle" className="theclassname" />
