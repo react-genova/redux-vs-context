@@ -1,6 +1,6 @@
 # redux and react context: another comparison
 
-This article does not wanto to choose betweem redux and react context. 
+This article does not want to choose betweem redux and react context. 
 In my personal opinion there's no choice at all: we need both, depending on the application we're creating.
 Moreover, even if we decide to use redux as state management, we still can use context in all over out application.
 
@@ -18,7 +18,7 @@ This is a hot topic, speaking about redux. I heard several times the saying: "wh
 
 ### Render performances
 
-I admit I thought React Context was suffering of a performance issue, affecting the rendering phase. This belief derived from some articles I read online and is related to the fact that the context force a rerender whenever or not your componet is using the changed part of the context itself. Actually it's a false problem, because you only need to make your component a pure component, and no useless rerender will occurr.  
+I admit I thought React Context was suffering from a performance issue, affecting the rendering phase. This belief derived from some articles I read online and is related to the fact that the context force a rerender whenever or not your componet is using the piece of context changed. Actually it's a false problem, because you only need to make your component a pure component, and no useless rerender will occurr.  
 On the other side, the connect method of react-redux already makes your component pure, under the hood.  
 That said, this is another *deuce*.
 
@@ -32,4 +32,4 @@ This project had a 100% test coverage. I used redux for years and I learnt to te
 
 ## Conclusions
 
-So it's a *deuce*? Well, we only looked at three (main) arguments, but the two technoligies are deeply diffent. I actually haven't found a valid reason to stop using redux and start using only context. Redux global store is such a marvellous plus that I need a very compelling and persuasive motivation to stop using redux.
+So it's a *deuce*? Well, we only looked at three (main) arguments, but the two technoligies are deeply diffent. I still haven't found a valid reason to stop using redux and start using only context. Redux global store is such a marvellous plus that I need a very compelling and persuasive motivation to stop using redux. But I am also using React Context, every time I need to propagate information from a componet down to its children, without the need to store them in the global store.
