@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# redux and react context: another comparison
 
-## Available Scripts
+This article does not wanto to choose betweem redux and react context. 
+In my personal opinion there's no choice at all: we need both, depending on the application we're creating.
+Moreover, even if we decide to use redux as state management, we still can use context in all over out application.
 
-In the project directory, you can run:
+## The comparison
 
-### `npm start`
+This source code is a simply application, in which I duplicated the state and used both techonology, to compare and analise different aspects. Obviously the score you will find in each paragraph is the expression of my personal opinion. We start from equality:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`redux 0 - context 0`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Boilerplate code
 
-### `npm test`
+This is a hot topic, speaking about redux. I heard several times the saying: "when you use redux, you write lots of boilerplate code". I always assumed it was a true story even if I never had that kind of feeling. This little project for sure demonstrates redux and react context carry the same lines of code. There's no winner here. Using React Context gives you no advantages in terms of code length.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`redux 1 - context 1`
 
-### `npm run build`
+### Render performances
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I admit I thought React Context was suffering of a performance issue, affecting the rendering phase. This belief derived from some articles I read online and is related to the fact that the context force a rerender whenever or not your componet is using the changed part of the context itself. Actually it's a false problem, because you only need to make your component a pure component, and no useless rerender will occurr.  
+On the other side, the connect method of react-redux already makes your component pure, under the hood.  
+That said, this is another *deuce*.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+`redux 2 - context 2`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tesing
 
-### `npm run eject`
+This project had a 100% test coverage. I used redux for years and I learnt to test it quickly and easily. I found redux far easier to test, but this is the first time I approach react context testing and I'm sure I did it the wrong way. It's not fair to let redux win this match, only because I never studied how to test context in a better wat. So, no winner again!
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`redux 3 - context 3`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Conclusions
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+So it's a *deuce*? Well, we only looked at three (main) arguments, but the two technoligies are deeply diffent. I actually haven't found a valid reason to stop using redux and start using only context. Redux global store is such a marvellous plus that I need a very compelling and persuasive motivation to stop using redux.
