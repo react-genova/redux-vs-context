@@ -1,17 +1,15 @@
 import React from 'react';
 import { render, fireEvent } from 'react-testing-library';
+import { mockDefault } from '../../../__testing/utils';
 import PlayerContainer from '../PlayerContainer';
 import Context from '../Context';
 
-jest.mock('../../components/PlayerEdit', () => ({
-    __esModule: true,
-    default: ({ name, surname, onNameChanged, onSurnameChanged }) => (
-        <div>
-            <div data-testid="name" onClick={() => onNameChanged(name)}>{name}</div>
-            <div data-testid="surname" onClick={() => onSurnameChanged(surname)}>{surname}</div>
-        </div>
-    )
-}));
+jest.mock('../../components/PlayerEdit', () => mockDefault(({ name, surname, onNameChanged, onSurnameChanged }) => (
+    <div>
+        <div data-testid="name" onClick={() => onNameChanged(name)}>{name}</div>
+        <div data-testid="surname" onClick={() => onSurnameChanged(surname)}>{surname}</div>
+    </div>
+)));
 
 describe('PlayerContainer consumer container', () => {
     it('renders without crashing and passes values down to its child', () => {

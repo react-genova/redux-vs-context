@@ -1,17 +1,15 @@
 import React from 'react';
 import { render } from 'react-testing-library';
+import { mockDefault } from '../../../__testing/utils';
 import NameContainer from '../NameContainer';
 import Context, { noop } from '../Context';
 
-jest.mock('../../components/FieldShow', () => ({
-    __esModule: true,
-    default: ({ value, label }) => (
-        <div>
-            <div data-testid="name">{value}</div>
-            <div data-testid="label">{label}</div>
-        </div>
-    )
-}));
+jest.mock('../../components/FieldShow', () => mockDefault(({ value, label }) => (
+    <div>
+        <div data-testid="name">{value}</div>
+        <div data-testid="label">{label}</div>
+    </div>
+)));
 
 describe('NameContainer consumer container', () => {
     it('renders without crashing and passes values down to its child', () => {

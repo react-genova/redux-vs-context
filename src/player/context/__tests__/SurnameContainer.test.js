@@ -1,17 +1,16 @@
 import React from 'react';
 import { render } from 'react-testing-library';
+import { mockDefault } from '../../../__testing/utils';
 import SurnameContainer from '../SurnameContainer';
 import Context, { noop } from '../Context';
 
-jest.mock('../../components/FieldShow', () => ({
-    __esModule: true,
-    default: ({ value, label }) => (
+jest.mock('../../components/FieldShow', () => mockDefault(({ value, label }) => (
         <div>
             <div data-testid="surname">{value}</div>
             <div data-testid="label">{label}</div>
         </div>
     )
-}));
+));
 
 describe('SurnameContainer consumer container', () => {
     it('renders without crashing and passes values down to its child', () => {
